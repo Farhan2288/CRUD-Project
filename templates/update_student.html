@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    {% include 'cdnlines.html' %}
+    <title></title>
+    <style media="screen">
+      input{
+        margin-top:5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="offset-md-4 col-md-4">
+          <h4 class="text-center">Please Enter Data Here</h4>
+          <form method="post" action="{% url 'updated_data' row.id %}">
+            {% csrf_token %}
+            <input type="text" name="fname" class="form-control" value="{{row.first_name}}" placeholder="First Name">
+            <input type="text" name="lname" class="form-control" value="{{row.last_name}}" placeholder="Last Name">
+            <input type="text" name="course" class="form-control" value="{{row.course}}" placeholder="Course">
+            <input type="number" name="fee" class="form-control" value="{{row.fee}}" placeholder="Fee">
+            <input type="text" name="iname" class="form-control" value="{{row.iname}}" placeholder="iname">
+            <input type="number" name="mobile" class="form-control" value="{{row.mobile}}" placeholder="Mobile">
+            <input type="text" name="email" class="form-control" value="{{row.email}}" placeholder="Email">
+            <input type="number" name="a1" class="form-control" value="{{row.a1}}" placeholder="A1">
+            <input type="number" name="a2" class="form-control" value="{{row.a2}}" placeholder="A2">
+            <input type="number" name="a3" class="form-control" value="{{row.a3}}" placeholder="A3">
+            <input type="number" name="a4" class="form-control" value="{{row.a4}}" placeholder="A4">
+            <input type="text" name="location" class="form-control" value="{{row.location}}" placeholder="Location">
+
+            <div class="text-center">
+              <input type="submit" name="" value="Update" class="btn btn-outline-success">
+              <input type="reset" name="" value="Cancel" class="btn btn-outline-danger"><br>
+              <a href="{% url 'indexpage' %}" class="btn btn-primary mt-1">Go To Mainpage</a>
+
+            </div>
+
+
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </body>
+</html>
